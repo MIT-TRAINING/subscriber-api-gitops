@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: subscriber-api
+  labels:
+    app: subscriber-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: subscriber-api
+  template:
+    metadata:
+      labels:
+        app: subscriber-api
+    spec:
+      containers:
+        - name: subscriber-api
+          image: image-registry.openshift-image-registry.svc:5000/mod10-demos/subscriber-api:v1
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: subscriber-api
+  labels:
+    app: subscriber-api
+spec:
+  selector:
+    app: subscriber-api
+  ports:
+    - port: 8080
+      targetPort: 8080
