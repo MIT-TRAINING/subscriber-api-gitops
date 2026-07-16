@@ -6,5 +6,5 @@ resources:
 patches:
   - path: replicas-patch.yaml
 images:
-  - name: image-registry.openshift-image-registry.svc:5000/learner26/subscriber-api
+  - name: image-registry.openshift-image-registry.svc:5000/mod10-demos/subscriber-api
     newTag: v2
