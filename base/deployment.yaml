@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: subscriber-api
-          image: image-registry.openshift-image-registry.svc:5000/learner26/subscriber-api:v1
+          image: image-registry.openshift-image-registry.svc:5000/mod10-demos/subscriber-api:v1
           ports:
             - containerPort: 8080
 ---
